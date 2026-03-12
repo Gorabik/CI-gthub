@@ -1,2 +1,2 @@
-def sum_two(a:int, b:str)
-  return a+b+4
+def sum_two(a:int, b:int)
+  return a+b
