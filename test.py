@@ -1,4 +1,5 @@
 import 
 
 def test_sum_two():
-  result = 
+  result = sum_two(2,2)
+  assert = 4 =result
