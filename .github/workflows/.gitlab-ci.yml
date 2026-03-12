@@ -25,19 +25,21 @@ jobs:
           python-version: 3.11
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        # Исправлен путь!
+        run: pip install -r crs/testfile/requirements.txt
 
       - name: Run unit tests
-        run: pytest testfile/
+        # Исправлен путь!
+        run: pytest crs/testfile/
 
       - name: Type checking with mypy
-        run: mypy src/
+        run: mypy crs/
 
       - name: Lint with black
-        run: black --diff --check src/
+        run: black --diff --check crs/
 
       - name: Check import sorting with isort
-        run: isort --check-only src/
+        run: isort --check-only crs/
 
       - name: Lint with flake8
-        run: flake8 src/
+        run: flake8 crs/
