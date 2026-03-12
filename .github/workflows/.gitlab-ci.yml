@@ -25,12 +25,10 @@ jobs:
           python-version: 3.11
 
       - name: Install dependencies
-        # Исправлен путь!
-        run: pip install -r crs/testfile/requirements.txt
+        run: pip install -r crs/tests/requirements.txt
 
       - name: Run unit tests
-        # Исправлен путь!
-        run: pytest crs/testfile/
+        run: pytest crs/tests/
 
       - name: Type checking with mypy
         run: mypy crs/
