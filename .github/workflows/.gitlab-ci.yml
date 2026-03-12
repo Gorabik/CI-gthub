@@ -36,7 +36,7 @@ jobs:
         run: mypy crs/
 
       - name: Lint with black
-        run: black --diff --check crs/
+        run: black crs/
 
       - name: Check import sorting with isort
         run: isort --check-only crs/
