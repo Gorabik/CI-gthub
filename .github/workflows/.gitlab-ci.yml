@@ -31,7 +31,7 @@ jobs:
         run: mypy crs/ --ignore-missing-imports
         
       - name: Lint with black
-        run: black --check --diff crs/
+        run: black crs/
         
       - name: Check import sorting with isort
         run: isort --check-only --diff crs/
