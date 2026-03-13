@@ -34,8 +34,8 @@ jobs:
         run: black crs/
         
       - name: Check import sorting with isort
-        run: isort crs/ --max-line-length=88 --extend-ignore=E203,W503,B008
+        run: isort crs/ 
         
       - name: Lint with flake8
-        run: flake8 crs/
+        run: flake8 crs/ --max-line-length=88 --extend-ignore=E203,W503,B008
         
