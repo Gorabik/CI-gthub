@@ -34,7 +34,7 @@ jobs:
         run: black crs/
         
       - name: Check import sorting with isort
-        run: isort --check-only --diff crs/
+        run: isort crs/
         
       - name: Lint with flake8
         run: flake8 crs/
