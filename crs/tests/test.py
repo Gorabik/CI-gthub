@@ -1,13 +1,14 @@
 import sys
 import os
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from routes import app
+import asyncio
+
 from fastapi.testclient import TestClient
+from routes import app
+from database import engine, Base
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 client = TestClient(app)
-
-import asyncio
-from database import engine, Base
 
 def reset_db():
     async def _reset():
@@ -109,3 +110,4 @@ if __name__ == "__main__":
     print("test_create_duplicate_recipe passed")
 
     print("\n All tests passed!")
+
