@@ -12,6 +12,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        
       - name: Cache pip
         uses: actions/cache@v3
         with:
@@ -22,15 +23,19 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: 3.11
+          
       - name: Install dependencies
         run: pip install -r crs/tests/requirements.txt
-      - name: Type checking with mypy
-        run: mypy crs/
-      - name: Lint with black
-        run: black crs/
-      - name: Check import sorting with isort
-        run: isort --check-only crs/
+        
       - name: Type checking with mypy
         run: mypy crs/ --ignore-missing-imports
+        
+      - name: Lint with black
+        run: black --check --diff crs/
+        
+      - name: Check import sorting with isort
+        run: isort --check-only --diff crs/
+        
       - name: Lint with flake8
         run: flake8 crs/
+        
